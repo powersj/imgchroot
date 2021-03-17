@@ -2,7 +2,7 @@
 
 *Quickly interact and customize a cloud image*
 
-[![Build Status](https://travis-ci.org/powersj/imgchroot.svg?branch=master)](https://travis-ci.org/powersj/imgchroot/) [![Go Report Card](https://goreportcard.com/badge/github.com/powersj/imgchroot)](https://goreportcard.com/report/github.com/powersj/imgchroot) [![Go Reference](https://pkg.go.dev/badge/github.com/powersj/imgchroot.svg)](https://pkg.go.dev/github.com/powersj/imgchroot)
+[![Build Status](https://travis-ci.com/powersj/imgchroot.svg?branch=master)](https://travis-ci.com/powersj/imgchroot/) [![Go Report Card](https://goreportcard.com/badge/github.com/powersj/imgchroot)](https://goreportcard.com/report/github.com/powersj/imgchroot) [![Go Reference](https://pkg.go.dev/badge/github.com/powersj/imgchroot.svg)](https://pkg.go.dev/github.com/powersj/imgchroot)
 
 ## Overview
 
@@ -28,12 +28,18 @@ Here are the primary functions available via the CLI:
 imgchroot provides a number of different sub-commands to directly interact
 with a cloud image. Click to see the sub-command's CLI page for more details:
 
-* [exec](chroot/#exec): run a command on the image
-* [info](chroot/#info): information about the image
-* [pull](chroot/#pull): pull a file from the image
-* [push](chroot/#push): push a file to the image
-* [run](chroot/#run): transfer and run a file on the image
-* [shell](chroot/#shell): start a shell on the image
+* [exec](https://powersj.github.io/imgchroot/chroot/#exec): run a command on
+  the image
+* [info](https://powersj.github.io/imgchroot/chroot/#info): information about
+  the image
+* [pull](https://powersj.github.io/imgchroot/chroot/#pull): pull a file from
+  the image
+* [push](https://powersj.github.io/imgchroot/chroot/#push): push a file to the
+  image
+* [run](https://powersj.github.io/imgchroot/chroot/#run): transfer and run a
+  file on the image
+* [shell](https://powersj.github.io/imgchroot/chroot/#shell): start a shell on
+  the image
 
 ### Download
 
@@ -41,7 +47,8 @@ imgchroot has the ability to find the latest cloud images as well. A user
 needs to provide the distro (e.g. ubuntu) and release (e.g. focal) to download.
 The the download will find the URL and download it.
 
-See the [download](download) sub-command for more information.
+See the [download](https://powersj.github.io/imgchroot/download) sub-command
+for more information.
 
 ## Support
 
