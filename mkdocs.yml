@@ -1,0 +1,32 @@
+site_name: imgchroot
+site_description: Quickly interact and customize a cloud image
+copyright: Copyright &copy; 2021 Joshua Powers
+repo_name: powersj/imgchroot
+repo_url: https://github.com/powersj/imgchroot
+theme:
+  name: material
+  favicon: images/favicon.ico
+  features:
+    - navigation.sections
+  font:
+    text: Ubuntu
+    code: Hack
+  icon:
+    logo: material/memory
+    repo: fontawesome/brands/github
+  palette:
+  - scheme: default
+    primary: indigo
+    accent: yellow
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+nav:
+- Overview: index.md
+- Chroot Commands: chroot.md
+- Download Commands: download.md
+- Contributing:
+  - Overview: contributing/overview.md
+  - Versioning: contributing/versioning.md
+  - Documentation: contributing/documentation.md

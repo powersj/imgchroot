@@ -1,0 +1,14 @@
+# Binary
+/imgchroot
+
+# Development
+/coverage.out
+/go.sum
+dist
+site
+
+# Images directory
+/imgs
+*.img
+*.ova
+*.squashfs
