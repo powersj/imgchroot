@@ -1,0 +1,14 @@
+---
+version: 1
+
+early-commands:
+    - ["uname", "-a"]
+ppa:
+    - url: ppa:canonical-server/ua-client-daily
+      remove: true
+packages:
+    install:
+        - ubuntu-advantage-tools
+        - ubuntu-advantage-pro
+commands:
+    - ["arch"]

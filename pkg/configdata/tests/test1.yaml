@@ -1,0 +1,53 @@
+---
+version: 1
+
+early-commands:
+    - ["ls"]
+    - ["uname", "-a"]
+archives:
+    - name: focal
+      url: "http://us.archive.ubuntu.com/ubuntu/ focal main"
+      comment: "Added by..."
+      remove: true
+ppa:
+    - url: ppa:cloud-init-dev/daily
+    - url: ppa:ubuntu-advantage/security-benchmarks
+      creds: powersj:aaaaaa
+      fingerprint: "A166877412DAC26E73CEBF3FF6C280178D13028C"
+      remove: true
+      comment: "Added by..."
+packages:
+    install:
+        - vim
+    remove:
+        - emacs
+    proposed:
+        - vim
+snap:
+    - name: eksctl
+      channel: 1.18.9/stable
+files:
+    - content: CiMgVGhpcyBmaWxlIGNvbnRyb2xzIHRoZSBzdGF0ZSBvZiBTRUxpbnV4...
+      owner: root:root
+      path: /etc/sysconfig/selinux
+      permissions: '0644'
+    - content: |
+        # My new /etc/sysconfig/samba file
+
+        SMBDOPTIONS="-D"
+      path: /etc/sysconfig/samba
+groups:
+    - tester
+users:
+    - username: myaccount
+      password: mypasswd
+      groups: [tester]
+      ssh-authorized-keys:
+        -  ssh-rsa AAAAB3NzaC1...POt5Q8zWd9qG7PBl9+eiH5qV7NZ mykey@host
+      ssh-import-id:
+        - lp:powersj
+        - gh:powersj
+      sudoer: true
+commands:
+    - ["ls"]
+    - ["uname", "-a"]

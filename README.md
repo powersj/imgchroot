@@ -18,18 +18,19 @@ complete the image is unmounted all without needing to boot the image itself.
 
 Here are the primary functions available via the CLI:
 
-1. **Chroot** commands will run commands against the image inside a chroot.
-   This includes command execution, via a shell, or push and pull files from
-   the image.
+1. **Chroot** commands allow the user to directly interact with chroot through
+   a series of shortcuts. This includes command execution, launching a shell,
+   or push and pull files from an image.
+1. **Customize** cloud images using a declarative YAML schema.
 1. **Download** latest cloud images
 
 ### Chroot
 
 imgchroot provides a number of different sub-commands to directly interact
-with a cloud image. Click to see the sub-command's CLI page for more details:
+with a cloud image. Checkout the relevant CLI commands for more details:
 
-* [exec](https://powersj.github.io/imgchroot/chroot/#exec): run a command on
-  the image
+* [exec](https://powersj.github.io/imgchroot/chroot/#exec): execute a command
+  on the image
 * [info](https://powersj.github.io/imgchroot/chroot/#info): information about
   the image
 * [pull](https://powersj.github.io/imgchroot/chroot/#pull): pull a file from
@@ -40,6 +41,17 @@ with a cloud image. Click to see the sub-command's CLI page for more details:
   file on the image
 * [shell](https://powersj.github.io/imgchroot/chroot/#shell): start a shell on
   the image
+
+### Customize
+
+imgchroot provides a declarative YAML schema to quickly configure a cloud
+image. For more information about the schema see
+[config data docs](config-data.md). Also checkout the following CLI commands:
+
+* [apply](https://powersj.github.io/imgchroot/chroot/#apply): apply a YAML
+   file to a cloud image
+* [validate](https://powersj.github.io/imgchroot/chroot/#validate): validates
+   the schema of a declarative YAML file
 
 ### Download
 

@@ -12,7 +12,7 @@ import (
 
 var (
 	downloadCmd = &cobra.Command{
-		Use:     "download <distro> <release",
+		Use:     "download <distro> <release>",
 		Example: "  imgchroot download ubuntu focal",
 		Short:   "Download a cloud image",
 		Args:    downloaderArgs,

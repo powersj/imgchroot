@@ -149,7 +149,8 @@ func (i *Image) Unmount() error {
 
 // Convert bytes to MiB.
 func bytes2human(bytes int64) float64 {
-	return float64(bytes) / 1024 / 1024
+	var kilobyte float64 = 1024
+	return float64(bytes) / kilobyte / kilobyte
 }
 
 // createMountPoint creates a folder in /tmp to mount the image in.
