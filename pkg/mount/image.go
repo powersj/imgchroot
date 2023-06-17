@@ -3,7 +3,6 @@ package mount
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"os/exec"
 	"path"
@@ -156,12 +155,12 @@ func bytes2human(bytes int64) float64 {
 func (i *Image) createMountPoint() error {
 	log.Debugf("creating temporary directory")
 
-	dir, err := ioutil.TempDir(os.TempDir(), "imgchroot-")
+	dir, err := os.CreateTemp("", "imgchroot-")
 	if err != nil {
 		return errors.Wrap(err, "image.createMountPoint")
 	}
 
-	i.MountPoint = dir
+	i.MountPoint = dir.Name()
 	log.Debugf(i.MountPoint)
 
 	return nil
@@ -222,11 +221,13 @@ func (i *Image) mountPartition() error {
 		option = "rw"
 	}
 
+	log.Debugf("mount -o %s %s %s", option, partDevice, i.MountPoint)
 	_, err := exec.Command("mount", "-o", option, partDevice, i.MountPoint).Output()
 	if err != nil {
 		return errors.Wrap(err, "image.mountPartition")
 	}
 
+	log.Debugf("udevadm settle")
 	if err := exec.Command("udevadm", "settle").Run(); err != nil {
 		return errors.Wrap(err, "image.mountPartition")
 	}

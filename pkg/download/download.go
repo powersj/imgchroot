@@ -88,7 +88,8 @@ func (i *ImageURL) ubuntuURL() error {
 }
 
 // printStatus prints the current download status.
-//   Example: " 532 of  532 MB (100.0%) @  10.3 MB/sec"
+//
+//	Example: " 532 of  532 MB (100.0%) @  10.3 MB/sec"
 func printStatus(resp *grab.Response) {
 	fmt.Printf(
 		"\r%4v of %4v MB (%4.1f%%) @ %5.1f MB/sec",

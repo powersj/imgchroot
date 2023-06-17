@@ -1,7 +1,8 @@
 package mount
 
 // QEMUImgInfo captures qemu-img JSON output.
-//   e.g. qemu-img info --output=json focal-server-cloudimg-amd64.img
+//
+//	e.g. qemu-img info --output=json focal-server-cloudimg-amd64.img
 type QEMUImgInfo struct {
 	// Filename analyzed
 	Filename string `json:"filename"`

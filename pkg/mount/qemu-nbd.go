@@ -2,7 +2,6 @@ package mount
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"os/exec"
 	"path"
@@ -148,7 +147,7 @@ func (n *NBD) waitForPID() error {
 	for i := 0; i < 30; i++ {
 		log.Debugln("checking for pid file")
 
-		data, err := ioutil.ReadFile(n.PIDFile)
+		data, err := os.ReadFile(n.PIDFile)
 		if err != nil {
 			time.Sleep(time.Second)
 			continue
@@ -167,7 +166,7 @@ func (n *NBD) waitForPIDCleanup() error {
 	for i := 0; i < 30; i++ {
 		log.Debugln("checking for pid file")
 
-		_, err := ioutil.ReadFile(n.PIDFile)
+		_, err := os.ReadFile(n.PIDFile)
 		if err != nil {
 			return nil
 		}

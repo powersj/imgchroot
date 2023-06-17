@@ -7,7 +7,6 @@ linters:
     - godot
     - gofumpt
     - goimports
-    - gomnd
     - lll
     - misspell
     - whitespace
